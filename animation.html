@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+        .content{
+            display: flex; 
+             justify-content:end;
+            align-items: end; 
+           font-size: 20px;
+           animation: move 2s alternate-reverse infinite
+        }
+        @keyframes move{
+            0%{
+                transform: translateX(0);
+            }
+            50%{
+                opacity: 0;
+            }
+            70%{
+                transform: scale(2);
+            }
+            100%{
+                transform: translateX(700px);
+            }
+        }
+        .k{
+            color: blueviolet;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="content">
+        <div class="main">my name is &nbsp <span class="k"> kelvin</span></div>
+        </div>
+</body>
+</html> 
