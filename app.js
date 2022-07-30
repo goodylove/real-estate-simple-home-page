@@ -1,37 +1,33 @@
 let postion = 0;
 let slider = document.querySelectorAll(".sliders");
 let dot = document.querySelectorAll(".dot");
-
-
-
+let items = document.querySelectorAll(".set1");
 const active = () => {
   for (let index = 0; index < slider.length; index++) {
     slider[index].style.display = "none";
   }
-  if (postion > slider.length-1) {
+  if (postion > slider.length - 1) {
     postion = 0;
   }
-  postion++
-  
-  slider[postion-1].style.display = "block";
- };
+  postion++;
+
+  slider[postion - 1].style.display = "block";
+};
 setInterval(() => {
   active();
-  activateThumbail()
-},2000);
+  activateThumbail();
+}, 2000);
 
 function activateThumbail() {
-  dot.forEach((p)=>{
-    p.style.opacity ="0.5"
-  })
+  dot.forEach((p) => {
+    p.style.opacity = "0.5";
+  });
   if (postion > dot.length) {
     postion = 0;
-    postion++
+    postion++;
   }
-  dot[postion-1].style.opacity ="1"
+  dot[postion - 1].style.opacity = "1";
 }
-
-
 
 let hambuger = document.querySelector(".buger");
 let mobile = document.querySelector(".mobile");
@@ -50,4 +46,21 @@ let right = document.querySelector(".right");
 right.addEventListener("click", () => {
   let unlist = document.querySelector(".list");
   unlist.style.display = "block";
+});
+
+let observer = new IntersectionObserver(
+  (enteries) => {
+    enteries.forEach((el) => {
+      el.target.classList.toggle("real", el.isIntersecting);
+      if (el.isIntersecting) {
+        observer.unobserve(el.target);
+      }
+    });
+  },
+  {
+    threshold: 1,
+  }
+);
+items.forEach((p) => {
+  observer.observe(p);
 });
