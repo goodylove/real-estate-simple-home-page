@@ -88,6 +88,7 @@ body {
   opacity: 0;
   position: absolute;
   z-index: 5;
+  display: none;
 }
 .list li {
   background-color: #5a7dac;
@@ -100,6 +101,7 @@ body {
   opacity: 1;
 }
 .drop1 {
+  position: relative;
   display: flex;
   justify-content: space-between;
 }
@@ -128,6 +130,10 @@ body {
 .mobile li {
   padding: 16px;
 }
+.mobile li:hover {
+  background-color: lightblue;
+  color: white;
+}
 
 .mobile.show {
   clip-path: circle(1500px at 100% -30%);
@@ -140,7 +146,6 @@ body {
   left: 89%;
   font-size: 25px;
   color: rgb(94, 89, 89);
-  /* width: 150px; */
 }
 
 .buger {
@@ -211,7 +216,6 @@ body {
   justify-content: space-around;
   width: 87%;
   margin: 15px;
-  /* flex-wrap: wrap; */
 }
 .mini-sect1 img {
   width: 200px;
@@ -322,7 +326,7 @@ body {
   height: 34%;
   padding: 0 20px;
   display: flex;
-  /* //  flex-wrap: wrap; */
+
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -334,7 +338,6 @@ body {
 .mini-sect5 {
   margin: 20px;
   padding: 10px;
-  /* height: 200px; */
 }
 .sect5 {
   height: 100%;
