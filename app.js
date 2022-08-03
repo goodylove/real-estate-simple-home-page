@@ -39,7 +39,6 @@ hambuger.addEventListener("click", () => {
 });
 
 close.addEventListener("click", () => {
-  // mobile.style.height = 0
   mobile.classList.remove("show");
 });
 let right = document.querySelector(".right");
